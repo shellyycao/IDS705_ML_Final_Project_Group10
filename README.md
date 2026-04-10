@@ -70,6 +70,25 @@ Each corruption is applied at 5 severity levels on the test set only. The model 
 
 ---
 
+## Sample Images
+
+### Original vs Corrupted Test Images
+
+| Corruption | Level 1 | Level 3 | Level 5 |
+|------------|---------|---------|---------|
+| Gaussian Blur | ![](link) | ![](link) | ![](link) |
+| JPEG Compression | ![](link) | ![](link) | ![](link) |
+| Downsample → Upsample | ![](link) | ![](link) | ![](link) |
+| Gaussian / Poisson Noise | ![](link) | ![](link) | ![](link) |
+| Brightness / Contrast | ![](link) | ![](link) | ![](link) |
+
+### Original (Clean)
+| Normal | Pneumonia |
+|--------|-----------|
+| ![](link) | ![](link) |
+
+---
+
 ## Notebooks
 
 | Notebook | Description |
