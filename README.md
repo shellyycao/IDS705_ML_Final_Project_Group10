@@ -20,20 +20,16 @@ DASYNET is a lightweight convolutional network with three feature extraction blo
 6. Linear (128 -> num_classes)
 
 ```mermaid
-flowchart LR
-    A[Input image 1x28x28] --> B[Conv2d 1 to 16, kernel 3, padding 1]
-    B --> C[BatchNorm then ReLU]
-    C --> D[MaxPool 2x2]
-    D --> E[Conv2d 16 to 32, kernel 3, padding 1]
-    E --> F[BatchNorm then ReLU]
-    F --> G[MaxPool 2x2]
-    G --> H[Conv2d 32 to 64, kernel 3, padding 1]
-    H --> I[BatchNorm then ReLU]
-    I --> J[MaxPool 2x2]
-    J --> K[Flatten 64x3x3]
-    K --> L[Linear 576 to 128, ReLU, Dropout 0.5]
-    L --> M[Linear 128 to 2]
-    M --> N[Softmax scores]
+flowchart TB
+    A[Input image 1x28x28]
+    B[Block 1: Conv 1 to 16 -> BN -> ReLU -> MaxPool]
+    C[Block 2: Conv 16 to 32 -> BN -> ReLU -> MaxPool]
+    D[Block 3: Conv 32 to 64 -> BN -> ReLU -> MaxPool]
+    E[Flatten 64x3x3]
+    F[Classifier: Linear 576 to 128 -> ReLU -> Dropout 0.5]
+    G[Output: Linear 128 to 2 -> Softmax]
+
+    A --> B --> C --> D --> E --> F --> G
 ```
 
 ### Training Setup
