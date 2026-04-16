@@ -21,19 +21,19 @@ DASYNET is a lightweight convolutional network with three feature extraction blo
 
 ```mermaid
 flowchart LR
-	A[Input Image 1x28x28] --> B[Conv2d 1->16, k=3, p=1]
-	B --> C[BatchNorm + ReLU]
-	C --> D[MaxPool 2x2]
-	D --> E[Conv2d 16->32, k=3, p=1]
-	E --> F[BatchNorm + ReLU]
-	F --> G[MaxPool 2x2]
-	G --> H[Conv2d 32->64, k=3, p=1]
-	H --> I[BatchNorm + ReLU]
-	I --> J[MaxPool 2x2]
-	J --> K[Flatten 64x3x3]
-	K --> L[Linear 576->128 + ReLU + Dropout(0.5)]
-	L --> M[Linear 128->2]
-	M --> N[Softmax Scores]
+    A[Input image 1x28x28] --> B[Conv2d 1 to 16, kernel 3, padding 1]
+    B --> C[BatchNorm then ReLU]
+    C --> D[MaxPool 2x2]
+    D --> E[Conv2d 16 to 32, kernel 3, padding 1]
+    E --> F[BatchNorm then ReLU]
+    F --> G[MaxPool 2x2]
+    G --> H[Conv2d 32 to 64, kernel 3, padding 1]
+    H --> I[BatchNorm then ReLU]
+    I --> J[MaxPool 2x2]
+    J --> K[Flatten 64x3x3]
+    K --> L[Linear 576 to 128, ReLU, Dropout 0.5]
+    L --> M[Linear 128 to 2]
+    M --> N[Softmax scores]
 ```
 
 ### Training Setup
