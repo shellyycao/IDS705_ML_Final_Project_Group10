@@ -20,7 +20,8 @@ notebooks/
     └── grid/                    # Grid-based DASYNet fine-tuning and attack study
 
 model weights/                   # All trained model weights (.pth)
-image prep/                         # Utility scripts (corrupted image generation)
+image prep/                      # Utility scripts (corrupted image generation)
+documentation/                   # Project proposal and final report
 ```
 
 ## Models
